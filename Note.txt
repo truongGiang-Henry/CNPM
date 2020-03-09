@@ -1,0 +1,5 @@
+Các mã số phải chạy tự động
+Cần có form cấu hình (Chạy đầu tiên) để nhập vào server name,db,...
+In ấn
+
+Gửi project lên elit, gửi code (Word) lên fb và elit
