@@ -74,14 +74,20 @@ create table HoaDon(
 	primary key (maHD)
 )
 insert into TaiKhoan values
-	('3', 'admin', '12345')
+	('3', 'admin', '12345'),
 	('1','Giang12345' , 'giangnguyen'),
 	('2','By678910', 'ruby')
 
 insert into PhongTro(giaThue, soNguoi, moTa) values
 	(3000000, 3, N'Phòng cho 3 người thuê, không máy lạnh')
+go
+insert into PhongTro(giaThue, soNguoi, moTa) values
 	(6000000, 3, N'Phòng cho 3 người thuê, có máy lạnh')
 
 insert into KhachHang values
 (51703010, N'Chế Hoàng Huy', 0123456789, 'PT001'),
 (51703190, N'Thái Minh Thông', 0234567890, 'PT001') 
+
+select * from PhongTro
+select * from TaiKhoan
+select * from KhachHang
