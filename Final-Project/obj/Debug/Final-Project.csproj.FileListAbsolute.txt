@@ -28,3 +28,19 @@ E:\HocTap\Công nghệ phần mềm\Final-Project\CNPM\Final-Project\Final-Proje
 E:\HocTap\Công nghệ phần mềm\Final-Project\CNPM\Final-Project\Final-Project\obj\Debug\Final-Project.pdb
 E:\HocTap\Công nghệ phần mềm\Final-Project\CNPM\Final-Project\Final-Project\obj\Debug\Final_Project.CauHinh.resources
 E:\HocTap\Công nghệ phần mềm\Final-Project\CNPM\Final-Project\Final-Project\obj\Debug\Final_Project.Login.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Debug\Final-Project.exe.config
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Debug\Final-Project.exe
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Debug\Final-Project.pdb
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.AddKH.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.AddPT.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.CauHinh.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.Login.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.HoaDon.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.NV.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.Properties.Resources.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.QLKH.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.QLPT.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.exe
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.pdb
