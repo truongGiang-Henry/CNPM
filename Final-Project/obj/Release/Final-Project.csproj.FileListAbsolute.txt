@@ -15,3 +15,4 @@ C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.csp
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.exe
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.pdb
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.forgotPassword.resources

@@ -35,6 +35,7 @@
             this.qlptDataSet12 = new Final_Project.QLPTDataSet1();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.forgotPassword = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.qlptDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlptDataSet12)).BeginInit();
             this.SuspendLayout();
@@ -42,18 +43,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 52);
+            this.label1.Location = new System.Drawing.Point(25, 108);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "USERNAME";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 112);
+            this.label2.Location = new System.Drawing.Point(25, 157);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
@@ -63,7 +63,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(223, 159);
+            this.button2.Location = new System.Drawing.Point(132, 195);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(104, 29);
@@ -84,7 +84,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(121, 47);
+            this.txtUsername.Location = new System.Drawing.Point(97, 105);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(208, 20);
@@ -92,18 +92,33 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(121, 112);
+            this.txtPassword.Location = new System.Drawing.Point(97, 154);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(208, 20);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
+            // forgotPassword
+            // 
+            this.forgotPassword.AutoSize = true;
+            this.forgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPassword.LinkColor = System.Drawing.Color.Navy;
+            this.forgotPassword.Location = new System.Drawing.Point(213, 244);
+            this.forgotPassword.Name = "forgotPassword";
+            this.forgotPassword.Size = new System.Drawing.Size(121, 17);
+            this.forgotPassword.TabIndex = 4;
+            this.forgotPassword.TabStop = true;
+            this.forgotPassword.Text = "forgot password ?";
+            this.forgotPassword.VisitedLinkColor = System.Drawing.Color.Navy;
+            this.forgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotPassword_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 212);
+            this.ClientSize = new System.Drawing.Size(346, 270);
+            this.Controls.Add(this.forgotPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.button2);
@@ -128,6 +143,7 @@
         private QLPTDataSet1 qlptDataSet12;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.LinkLabel forgotPassword;
     }
 }
 

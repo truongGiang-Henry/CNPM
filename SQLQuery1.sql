@@ -40,6 +40,7 @@ BEGIN
 		END
 	RETURN @ID
 END
+
 go
 create table PhongTro(
 	maPT char (5) DEFAULT DBO.AUTO_IDPT(),
@@ -48,6 +49,7 @@ create table PhongTro(
 	moTa Nvarchar (100),
 	primary key (maPT)
 )
+
 go 
 create table KhachHang(
 	CMND char(12),
@@ -61,10 +63,11 @@ create table KhachHang(
 go 
 create table TaiKhoan(
 	id char (10),
-	username char(100),
+	username char(100) unique,
 	pwd char(100),
 	primary key (id)
 )
+
 go 
 create table HoaDon(
 	maHD char(12),
@@ -74,11 +77,13 @@ create table HoaDon(
 	constraint HoaDon_KhachHang_MaPT foreign key (CMND) references KhachHang(CMND),
 	primary key (maHD)
 )
+
+go
 insert into TaiKhoan values
 	('3', 'admin', '12345'),
 	('1','Giang12345' , 'giangnguyen'),
 	('2','By678910', 'ruby')
-
+go
 insert into PhongTro(giaThue, soNguoi, moTa) values
 	(3000000, 3, N'Phòng cho 3 người thuê, không máy lạnh')
 go
@@ -98,5 +103,3 @@ AS
 		INSERT INTO KHACHHANG(CMND, HOTEN, DIENTHOAI, MAPT) VALUES (@CMND, @HOTEN, @DIENTHOAI, @MAPT)
 	ELSE
 		RAISERROR('DA TON TAI CMND VUI LONG THU LAI', 16, 0)
-
-		select * from khachhang

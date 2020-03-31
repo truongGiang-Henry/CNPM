@@ -85,5 +85,11 @@ namespace Final_Project
                 this.button2_Click(sender, e);
             }
         }
+
+        private void forgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            forgotPassword forgot = new forgotPassword();
+            forgot.ShowDialog();
+        }
     }
 }

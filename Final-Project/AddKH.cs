@@ -47,6 +47,9 @@ namespace Final_Project
             if (name.Text.Equals("") || phone.Text.Equals("") || cmnd.Text.Equals(""))
             {
                 MessageBox.Show("Bạn cần điền đủ dữ liệu");
+                checkFocus(name);
+                checkFocus(phone);
+                checkFocus(cmnd);
             }
             else
             {
@@ -74,6 +77,14 @@ namespace Final_Project
                 {
                     MessageBox.Show(se.Message);
                 }
+            }
+        }
+
+        private void checkFocus(TextBox textBox)
+        {
+            if (textBox.Text.Equals(""))
+            {
+                textBox.Focus();
             }
         }
 
