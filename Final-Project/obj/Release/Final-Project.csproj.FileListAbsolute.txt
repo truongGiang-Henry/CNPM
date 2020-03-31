@@ -1,6 +1,7 @@
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Release\Final-Project.exe.config
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Release\Final-Project.exe
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Release\Final-Project.pdb
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.AddKH.resources
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.AddPT.resources
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.CauHinh.resources

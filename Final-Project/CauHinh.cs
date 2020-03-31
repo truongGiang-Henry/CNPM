@@ -42,6 +42,7 @@ namespace Final_Project
 
         private void ButtonServer_Click(object sender, EventArgs e)
         {
+            // build a connection String
             connectionStringBuilder.DataSource = serverTextBox.Text;
             connectionStringBuilder.InitialCatalog = DBTextBox.Text;
             connectionStringBuilder.UserID = userIdTextBox.Text;
@@ -52,7 +53,7 @@ namespace Final_Project
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection(sectionName);
 
-           // MessageBox.Show(config.ConnectionStrings.ConnectionStrings["Final_Project.Properties.Settings.QLPTConnectionString"].ConnectionString);
+           //go to login form when completed build connection String
             Login f1 = new Login();
             f1.Show();
             this.Hide();

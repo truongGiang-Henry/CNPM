@@ -52,11 +52,12 @@ go
 create table KhachHang(
 	CMND char(12),
 	hoTen Nvarchar (50) not null,
-	dienThoai int not null,
+	dienThoai varchar (15) not null,
 	maPT char(5),
 	constraint  KhachHang_PhongTro_MaPT foreign key (maPT) references PhongTro(maPT),
 	primary key (CMND)
 )
+
 go 
 create table TaiKhoan(
 	id char (10),
@@ -88,6 +89,14 @@ insert into KhachHang values
 (51703010, N'Chế Hoàng Huy', 0123456789, 'PT001'),
 (51703190, N'Thái Minh Thông', 0234567890, 'PT001') 
 
-select * from PhongTro
-select * from TaiKhoan
-select * from KhachHang
+--ADD KHACH HANG
+GO
+CREATE PROC SP_ADDKHACHHANG
+	@CMND CHAR(12), @HOTEN NVARCHAR(50), @DIENTHOAI VARCHAR(15), @MAPT CHAR(5)
+AS
+	IF NOT EXISTS (SELECT CMND FROM KHACHHANG WHERE CMND = @CMND)
+		INSERT INTO KHACHHANG(CMND, HOTEN, DIENTHOAI, MAPT) VALUES (@CMND, @HOTEN, @DIENTHOAI, @MAPT)
+	ELSE
+		RAISERROR('DA TON TAI CMND VUI LONG THU LAI', 16, 0)
+
+		select * from khachhang

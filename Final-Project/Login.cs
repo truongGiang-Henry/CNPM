@@ -14,16 +14,13 @@ namespace Final_Project
 {
     public partial class Login : Form
     {
-        private String connectionString;
-
         public Login()
         {
             InitializeComponent();
         }
        private void Form1_Load(object sender, EventArgs e)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["Final_Project.Properties.Settings.QLPTConnectionString"].ConnectionString;
-            //MessageBox.Show(connectionString);
+            txtUsername.Focus();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -45,22 +42,29 @@ namespace Final_Project
         {
             try
             {
-                SqlConnection sql = new SqlConnection(this.connectionString);
-               
-                sql.Open();
-                String query = "Select * from TaiKhoan where username = '" + txtUsername.Text.Trim() + "' and pwd = '" + txtPassword.Text.Trim() + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, sql);
+                SqlConnection conn = new SqlConnection(Program.getConnectionString());
+                conn.Open();
+
+                StringBuilder query = new StringBuilder();
+                query.Append("SELECT * FROM TAIKHOAN WHERE USERNAME = '");
+                query.Append(txtUsername.Text.Trim());
+                query.Append("' AND PWD = '");
+                query.Append(txtPassword.Text.Trim());
+                query.Append("'");
+
+                SqlDataAdapter sda = new SqlDataAdapter(query.ToString(), conn);
                 DataTable tbl = new DataTable();
                 sda.Fill(tbl);
-                sql.Close();
+
+                conn.Close();
+
                 if (tbl.Rows.Count == 1)
                 {
 
                     NV nv = new NV();
                     this.Hide();
                     nv.ShowDialog();
-                    sql.Close();
-
+                    conn.Close();
                 }
                 else
                 {

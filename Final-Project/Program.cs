@@ -12,12 +12,15 @@ namespace Final_Project
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+
         [STAThread]
         static void Main()
         {
+            String connectionString = getConnectionString();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if(ConfigurationManager.ConnectionStrings["Final_Project.Properties.Settings.QLPTConnectionString"].ConnectionString == "")
+            if (connectionString.Equals(""))
             {
                 Application.Run(new CauHinh());
             }
@@ -26,6 +29,11 @@ namespace Final_Project
                 Application.Run(new Login());
             }
                  
+        }
+
+        public static String getConnectionString() {
+            return ConfigurationManager.ConnectionStrings["Final_Project.Properties.Settings.QLPTConnectionString"].ConnectionString;
+            
         }
     }
 }

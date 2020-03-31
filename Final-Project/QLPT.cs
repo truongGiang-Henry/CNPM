@@ -15,10 +15,9 @@ namespace Final_Project
     {
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source = TRUONGGIANG\SQLEXPRESS;Initial Catalog = QLPT; Integrated Security = True";
+        string str = Program.getConnectionString();
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
-        //Data Source=TRUONGGIANG\SQLEXPRESS;Initial Catalog=school;Integrated Security=True
 
         void loadData()
         {
