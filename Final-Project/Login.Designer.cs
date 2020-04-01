@@ -59,7 +59,6 @@
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "PASSWORD";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button2
             // 

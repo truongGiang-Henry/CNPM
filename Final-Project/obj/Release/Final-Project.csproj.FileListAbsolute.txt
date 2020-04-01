@@ -1,10 +1,11 @@
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Release\Final-Project.exe.config
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Release\Final-Project.exe
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\bin\Release\Final-Project.pdb
-C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.AddKH.resources
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.AddPT.resources
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.CauHinh.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.changePassword.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.forgotPassword.resources
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.Login.resources
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.HoaDon.resources
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.NV.resources
@@ -15,4 +16,3 @@ C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.csp
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.exe
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final-Project.pdb
-C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Release\Final_Project.forgotPassword.resources

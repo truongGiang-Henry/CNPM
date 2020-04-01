@@ -24,30 +24,34 @@ namespace Final_Project
         {
             if (userName.Text.Equals("") || email.Text.Equals(""))
             {
-                checkValid(userName);
-                checkValid(email);
+                CheckValid(userName);
+                CheckValid(email);
             }
             else
             {
                 // build query to check if user exists
                 StringBuilder queryId = new StringBuilder();
-                queryId.Append("SELECT ID FROM TAIKHOAN WHERE USERNAME LIKE '");
-                queryId.Append(userName);
+                queryId.Append("SELECT COUNT(*) FROM TAIKHOAN WHERE USERNAME LIKE '");
+                queryId.Append(userName.Text);
                 queryId.Append("'");
 
                 // create connection
-                SqlConnection connTmp = new SqlConnection(Program.getConnectionString());
-                SqlCommand cmdTmp = connTmp.CreateCommand();
-                cmdTmp.CommandText = queryId.ToString();
+                SqlConnection conn = new SqlConnection(Program.getConnectionString());
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = queryId.ToString();
 
                 // execute command
-                connTmp.Open();
-                var id = cmdTmp.ExecuteScalar();
-                connTmp.Close();
+                conn.Open();
+                String count = Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
 
-                if (id != null)
+                if (count.Equals("0"))
                 {
-
+                    MessageBox.Show("Không tìm thấy username hãy thử lại");
+                    userName.Focus();
+                }
+                else
+                {
                     // build a random password
                     StringBuilder passBuilder = new StringBuilder();
                     passBuilder.Append(RandomString(4, true));
@@ -63,9 +67,7 @@ namespace Final_Project
                     query.Append(userName.Text);
                     query.Append("'");
 
-                    // create connection
-                    SqlConnection conn = new SqlConnection(Program.getConnectionString());
-                    SqlCommand cmd = conn.CreateCommand();
+                    // create new query for command
                     cmd.CommandText = query.ToString();
 
                     // open connection
@@ -99,16 +101,7 @@ namespace Final_Project
 
                     MessageBox.Show("Mật khẩu khôi phục đã được gửi");
                 }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy username hãy thử lại");
-                    userName.Focus();
-                }
-
             }
-
-
-
         }
 
         // Generate a random string with a given size  
@@ -122,6 +115,8 @@ namespace Final_Project
                 ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
                 builder.Append(ch);
             }
+
+            // if lowercase == true return a lowercase
             if (lowerCase)
             {
                 return builder.ToString().ToLower();
@@ -130,7 +125,7 @@ namespace Final_Project
             return builder.ToString();
         }
 
-        private void checkValid(TextBox textBox)
+        private void CheckValid(TextBox textBox)
         {
             if (textBox.Text.Equals(""))
             {

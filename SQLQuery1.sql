@@ -64,7 +64,7 @@ go
 create table TaiKhoan(
 	id char (10),
 	username char(100) unique,
-	pwd char(100),
+	pwd varchar(100),
 	primary key (id)
 )
 
@@ -103,3 +103,6 @@ AS
 		INSERT INTO KHACHHANG(CMND, HOTEN, DIENTHOAI, MAPT) VALUES (@CMND, @HOTEN, @DIENTHOAI, @MAPT)
 	ELSE
 		RAISERROR('DA TON TAI CMND VUI LONG THU LAI', 16, 0)
+
+
+		select * from taikhoan

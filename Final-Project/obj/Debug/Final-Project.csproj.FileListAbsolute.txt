@@ -44,3 +44,6 @@ C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.cspro
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.exe
 C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.pdb
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final-Project.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.changePassword.resources
+C:\Users\Admin\Desktop\CNPM\CNPM.git\Final-Project\obj\Debug\Final_Project.forgotPassword.resources

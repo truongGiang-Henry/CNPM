@@ -14,6 +14,7 @@ namespace Final_Project
 {
     public partial class Login : Form
     {
+        public static String userName;
         public Login()
         {
             InitializeComponent();
@@ -28,16 +29,6 @@ namespace Final_Project
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -46,7 +37,7 @@ namespace Final_Project
                 conn.Open();
 
                 StringBuilder query = new StringBuilder();
-                query.Append("SELECT * FROM TAIKHOAN WHERE USERNAME = '");
+                query.Append("SELECT ID FROM TAIKHOAN WHERE USERNAME = '");
                 query.Append(txtUsername.Text.Trim());
                 query.Append("' AND PWD = '");
                 query.Append(txtPassword.Text.Trim());
@@ -60,11 +51,14 @@ namespace Final_Project
 
                 if (tbl.Rows.Count == 1)
                 {
+                    // get username for change password form
+                    userName = txtUsername.Text;
 
                     NV nv = new NV();
                     this.Hide();
                     nv.ShowDialog();
-                    conn.Close();
+
+                    
                 }
                 else
                 {
@@ -90,6 +84,11 @@ namespace Final_Project
         {
             forgotPassword forgot = new forgotPassword();
             forgot.ShowDialog();
+        }
+
+        public static String getUserName()
+        {
+            return userName;
         }
     }
 }

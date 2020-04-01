@@ -22,25 +22,37 @@ namespace Final_Project
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void qlptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             QLPT qlpt = new QLPT();
             qlpt.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void qlntToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             QLKH qlkh = new QLKH();
             qlkh.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void logout_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login f1 = new Login();
             f1.ShowDialog();
+        }
+
+        private void tktcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            changePassword changePassword = new changePassword();
+            changePassword.ShowDialog();
         }
     }
 }
