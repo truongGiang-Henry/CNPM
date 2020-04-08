@@ -28,48 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.qlptDataSet11 = new Final_Project.QLPTDataSet1();
             this.qlptDataSet12 = new Final_Project.QLPTDataSet1();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.forgotPassword = new System.Windows.Forms.LinkLabel();
+            this.materialSingleLineTextFieldUserName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialSingleLineTextFieldPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabelForgotPassword = new MaterialSkin.Controls.MaterialLabel();
+            this.materialRaisedButtonLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.qlptDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlptDataSet12)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 108);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "USERNAME";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 157);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "PASSWORD";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(132, 195);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 29);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "LOGIN";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // qlptDataSet11
             // 
@@ -81,48 +50,106 @@
             this.qlptDataSet12.DataSetName = "QLPTDataSet1";
             this.qlptDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtUsername
+            // materialSingleLineTextFieldUserName
             // 
-            this.txtUsername.Location = new System.Drawing.Point(97, 105);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(208, 20);
-            this.txtUsername.TabIndex = 1;
+            this.materialSingleLineTextFieldUserName.Depth = 0;
+            this.materialSingleLineTextFieldUserName.Hint = "";
+            this.materialSingleLineTextFieldUserName.Location = new System.Drawing.Point(108, 98);
+            this.materialSingleLineTextFieldUserName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextFieldUserName.Name = "materialSingleLineTextFieldUserName";
+            this.materialSingleLineTextFieldUserName.PasswordChar = '\0';
+            this.materialSingleLineTextFieldUserName.SelectedText = "";
+            this.materialSingleLineTextFieldUserName.SelectionLength = 0;
+            this.materialSingleLineTextFieldUserName.SelectionStart = 0;
+            this.materialSingleLineTextFieldUserName.Size = new System.Drawing.Size(208, 23);
+            this.materialSingleLineTextFieldUserName.TabIndex = 5;
+            this.materialSingleLineTextFieldUserName.TabStop = false;
+            this.materialSingleLineTextFieldUserName.UseSystemPasswordChar = false;
             // 
-            // txtPassword
+            // materialSingleLineTextFieldPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(97, 154);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(208, 20);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            this.materialSingleLineTextFieldPassword.Depth = 0;
+            this.materialSingleLineTextFieldPassword.Hint = "";
+            this.materialSingleLineTextFieldPassword.Location = new System.Drawing.Point(108, 147);
+            this.materialSingleLineTextFieldPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextFieldPassword.Name = "materialSingleLineTextFieldPassword";
+            this.materialSingleLineTextFieldPassword.PasswordChar = '*';
+            this.materialSingleLineTextFieldPassword.SelectedText = "";
+            this.materialSingleLineTextFieldPassword.SelectionLength = 0;
+            this.materialSingleLineTextFieldPassword.SelectionStart = 0;
+            this.materialSingleLineTextFieldPassword.Size = new System.Drawing.Size(208, 23);
+            this.materialSingleLineTextFieldPassword.TabIndex = 6;
+            this.materialSingleLineTextFieldPassword.TabStop = false;
+            this.materialSingleLineTextFieldPassword.UseSystemPasswordChar = false;
+            this.materialSingleLineTextFieldPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.materialSingleLineTextFieldPassword_KeyDown);
             // 
-            // forgotPassword
+            // materialLabel1
             // 
-            this.forgotPassword.AutoSize = true;
-            this.forgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotPassword.LinkColor = System.Drawing.Color.Navy;
-            this.forgotPassword.Location = new System.Drawing.Point(213, 244);
-            this.forgotPassword.Name = "forgotPassword";
-            this.forgotPassword.Size = new System.Drawing.Size(121, 17);
-            this.forgotPassword.TabIndex = 4;
-            this.forgotPassword.TabStop = true;
-            this.forgotPassword.Text = "forgot password ?";
-            this.forgotPassword.VisitedLinkColor = System.Drawing.Color.Navy;
-            this.forgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotPassword_LinkClicked);
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(13, 98);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel1.TabIndex = 7;
+            this.materialLabel1.Text = "User name :";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(15, 147);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(87, 19);
+            this.materialLabel2.TabIndex = 8;
+            this.materialLabel2.Text = "Password : ";
+            // 
+            // materialLabelForgotPassword
+            // 
+            this.materialLabelForgotPassword.AutoSize = true;
+            this.materialLabelForgotPassword.Depth = 0;
+            this.materialLabelForgotPassword.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabelForgotPassword.Location = new System.Drawing.Point(122, 237);
+            this.materialLabelForgotPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabelForgotPassword.Name = "materialLabelForgotPassword";
+            this.materialLabelForgotPassword.Size = new System.Drawing.Size(133, 19);
+            this.materialLabelForgotPassword.TabIndex = 10;
+            this.materialLabelForgotPassword.Text = "Forgot password ?";
+            this.materialLabelForgotPassword.Click += new System.EventHandler(this.materialLabel3_Click);
+            // 
+            // materialRaisedButtonLogin
+            // 
+            this.materialRaisedButtonLogin.AutoSize = true;
+            this.materialRaisedButtonLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButtonLogin.Depth = 0;
+            this.materialRaisedButtonLogin.Icon = null;
+            this.materialRaisedButtonLogin.Location = new System.Drawing.Point(157, 187);
+            this.materialRaisedButtonLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButtonLogin.Name = "materialRaisedButtonLogin";
+            this.materialRaisedButtonLogin.Primary = true;
+            this.materialRaisedButtonLogin.Size = new System.Drawing.Size(61, 36);
+            this.materialRaisedButtonLogin.TabIndex = 12;
+            this.materialRaisedButtonLogin.Text = "Login";
+            this.materialRaisedButtonLogin.UseVisualStyleBackColor = true;
+            this.materialRaisedButtonLogin.Click += new System.EventHandler(this.materialRaisedButtonLogin_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 270);
-            this.Controls.Add(this.forgotPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(362, 265);
+            this.Controls.Add(this.materialRaisedButtonLogin);
+            this.Controls.Add(this.materialLabelForgotPassword);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.materialSingleLineTextFieldPassword);
+            this.Controls.Add(this.materialSingleLineTextFieldUserName);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Login";
@@ -135,14 +162,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
         private QLPTDataSet1 qlptDataSet11;
         private QLPTDataSet1 qlptDataSet12;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.LinkLabel forgotPassword;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextFieldUserName;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextFieldPassword;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabelForgotPassword;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButtonLogin;
     }
 }
 

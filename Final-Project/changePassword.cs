@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Final_Project
 {
     public partial class changePassword : Form
@@ -35,7 +38,7 @@ namespace Final_Project
                 query.Append(userName);
                 query.Append("'");
                 query.Append("AND PWD LIKE '");
-                query.Append(oldPasssword.ToString());
+                query.Append(oldPasssword.Text);
                 query.Append("'");
 
                 SqlConnection conn = new SqlConnection(Program.getConnectionString());
@@ -48,7 +51,7 @@ namespace Final_Project
 
                 if (count.Equals("0"))
                 {
-                    MessageBox.Show("Mật khẩu cũ bạn nhập không đúng ☻");
+                    MaterialMessageBox.Show("Sai mật khẩu ☻", "Thông báo");
                 }
                 else
                 {

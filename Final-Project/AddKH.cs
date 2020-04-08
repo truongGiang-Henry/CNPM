@@ -28,11 +28,14 @@ namespace Final_Project
             StringBuilder query = new StringBuilder();
             query.Append("SELECT MAPT FROM PHONGTRO");
 
+            // open connection
             conn.Open();
-
             SqlDataAdapter da = new SqlDataAdapter(query.ToString(), conn);
             DataSet ds = new DataSet();
             da.Fill(ds, "da");
+            conn.Close();
+
+            // set value for combobox
             roomId.ValueMember = "MAPT";
             roomId.DataSource = ds.Tables["da"];
             roomId.DropDownStyle = ComboBoxStyle.DropDownList;

@@ -40,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 49);
+            this.label1.Location = new System.Drawing.Point(47, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
@@ -58,11 +58,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 121);
+            this.label3.Location = new System.Drawing.Point(11, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(121, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Mật khẩu mới ";
+            this.label3.Text = "Mật khẩu mới xác nhận ";
             // 
             // oldPasssword
             // 
@@ -70,7 +70,6 @@
             this.oldPasssword.Name = "oldPasssword";
             this.oldPasssword.Size = new System.Drawing.Size(157, 20);
             this.oldPasssword.TabIndex = 3;
-            this.oldPasssword.Text = " ";
             // 
             // newPassword
             // 

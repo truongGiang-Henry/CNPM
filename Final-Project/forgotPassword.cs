@@ -11,13 +11,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Final_Project
 {
-    public partial class forgotPassword : Form
+    public partial class forgotPassword : MaterialForm
     {
         public forgotPassword()
         {
             InitializeComponent();
+
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
 
         private void submit_Click(object sender, EventArgs e)
@@ -47,7 +55,7 @@ namespace Final_Project
 
                 if (count.Equals("0"))
                 {
-                    MessageBox.Show("Không tìm thấy username hãy thử lại");
+                    MaterialMessageBox.Show("Không tìm thấy username hãy thử lại", "Thông báo");
                     userName.Focus();
                 }
                 else
@@ -99,7 +107,7 @@ namespace Final_Project
                     smt.EnableSsl = true;
                     smt.Send(msg);
 
-                    MessageBox.Show("Mật khẩu khôi phục đã được gửi");
+                    MaterialMessageBox.Show("Mật khẩu khôi phục đã được gửi", "Thông báo");
                 }
             }
         }
@@ -125,7 +133,7 @@ namespace Final_Project
             return builder.ToString();
         }
 
-        private void CheckValid(TextBox textBox)
+        private void CheckValid(MaterialSingleLineTextField textBox)
         {
             if (textBox.Text.Equals(""))
             {
