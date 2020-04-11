@@ -14,9 +14,9 @@ using MaterialSkin.Controls;
 
 namespace Final_Project
 {
-    public partial class changePassword : Form
+    public partial class ChangePassword : MaterialForm
     {
-        public changePassword()
+        public ChangePassword()
         {
             InitializeComponent();
         }

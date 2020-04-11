@@ -1,6 +1,6 @@
 ﻿namespace Final_Project
 {
-    partial class changePassword
+    partial class ChangePassword
     {
         /// <summary>
         /// Required designer variable.
@@ -60,9 +60,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Mật khẩu mới xác nhận ";
+            this.label3.Text = "Xác nhận mật khẩu";
             // 
             // oldPasssword
             // 
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 214);
+            this.ClientSize = new System.Drawing.Size(357, 208);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.newPasswordConfirm);
             this.Controls.Add(this.newPassword);

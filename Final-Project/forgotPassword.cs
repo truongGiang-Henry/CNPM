@@ -16,9 +16,9 @@ using MaterialSkin.Controls;
 
 namespace Final_Project
 {
-    public partial class forgotPassword : MaterialForm
+    public partial class ForgotPassword : MaterialForm
     {
-        public forgotPassword()
+        public ForgotPassword()
         {
             InitializeComponent();
 
@@ -108,6 +108,7 @@ namespace Final_Project
                     smt.Send(msg);
 
                     MaterialMessageBox.Show("Mật khẩu khôi phục đã được gửi", "Thông báo");
+                    this.Close();
                 }
             }
         }

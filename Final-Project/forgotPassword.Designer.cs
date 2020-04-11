@@ -1,6 +1,6 @@
 ﻿namespace Final_Project
 {
-    partial class forgotPassword
+    partial class ForgotPassword
     {
         /// <summary>
         /// Required designer variable.

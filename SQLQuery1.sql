@@ -92,7 +92,12 @@ insert into PhongTro(giaThue, soNguoi, moTa) values
 
 insert into KhachHang values
 (51703010, N'Chế Hoàng Huy', 0123456789, 'PT001'),
-(51703190, N'Thái Minh Thông', 0234567890, 'PT001') 
+(51703190, N'Thái Minh Thông', 0234567890, 'PT001'),
+(51703100, N'Thái Luôn Mông', 0234567845, 'PT003'),
+(51703176, N'Minh Mẫn', 0234567451, 'PT003'),
+(51703138, N'Phan Thế An', 25689471235, 'PT007')
+
+
 
 --ADD KHACH HANG
 GO
@@ -106,3 +111,5 @@ AS
 
 
 		select * from taikhoan
+		select * from phongtro
+		select * from khachhang

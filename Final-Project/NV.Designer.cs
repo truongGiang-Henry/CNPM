@@ -32,6 +32,7 @@
             this.tabPageQLPT = new System.Windows.Forms.TabPage();
             this.tabPageQLNV = new System.Windows.Forms.TabPage();
             this.tabPageTKTC = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             this.materialTabControl1.Controls.Add(this.tabPageQLPT);
             this.materialTabControl1.Controls.Add(this.tabPageQLNV);
             this.materialTabControl1.Controls.Add(this.tabPageTKTC);
+            this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialTabControl1.Location = new System.Drawing.Point(12, 122);
@@ -68,7 +70,7 @@
             this.tabPageQLNV.Location = new System.Drawing.Point(4, 28);
             this.tabPageQLNV.Name = "tabPageQLNV";
             this.tabPageQLNV.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageQLNV.Size = new System.Drawing.Size(1035, 425);
+            this.tabPageQLNV.Size = new System.Drawing.Size(1035, 394);
             this.tabPageQLNV.TabIndex = 1;
             this.tabPageQLNV.Text = "Quản lý nhân viên";
             this.tabPageQLNV.UseVisualStyleBackColor = true;
@@ -78,10 +80,23 @@
             this.tabPageTKTC.Location = new System.Drawing.Point(4, 28);
             this.tabPageTKTC.Name = "tabPageTKTC";
             this.tabPageTKTC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTKTC.Size = new System.Drawing.Size(1035, 425);
+            this.tabPageTKTC.Size = new System.Drawing.Size(1035, 394);
             this.tabPageTKTC.TabIndex = 2;
             this.tabPageTKTC.Text = "Thống kê thu chi";
             this.tabPageTKTC.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.AllowDrop = true;
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPage1.Size = new System.Drawing.Size(1035, 394);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Đổi mật khẩu";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // materialTabSelector1
             // 
@@ -118,5 +133,6 @@
         private System.Windows.Forms.TabPage tabPageQLNV;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.TabPage tabPageTKTC;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }

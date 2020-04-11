@@ -1,6 +1,6 @@
 ﻿namespace Final_Project
 {
-    partial class formOK
+    partial class FormOK
     {
         /// <summary>
         /// Required designer variable.

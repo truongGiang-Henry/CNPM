@@ -11,7 +11,7 @@ namespace Final_Project
     {
         public static DialogResult Show(string message, string caption)
         {
-            formOK ok = new formOK();
+            FormOK ok = new FormOK();
             ok.Text = caption;
             ok.setMessage(message);
 

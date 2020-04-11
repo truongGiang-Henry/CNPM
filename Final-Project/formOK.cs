@@ -13,9 +13,9 @@ using MaterialSkin.Controls;
 
 namespace Final_Project
 {
-    public partial class formOK : MaterialForm
+    public partial class FormOK : MaterialForm
     {
-        public formOK()
+        public FormOK()
         {
             InitializeComponent();
 

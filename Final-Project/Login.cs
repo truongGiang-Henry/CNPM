@@ -64,7 +64,7 @@ namespace Final_Project
 
         private void materialLabel3_Click(object sender, EventArgs e)
         {
-            forgotPassword forgot = new forgotPassword();
+            ForgotPassword forgot = new ForgotPassword();
             forgot.ShowDialog();
         }
 
