@@ -16,7 +16,7 @@ namespace Final_Project
 {
     public partial class Room : MaterialForm
     {
-        private RoomDAO room;
+        public RoomDAO room;
 
         private List<CustomerDAO> customers = new List<CustomerDAO>();
 
@@ -31,9 +31,11 @@ namespace Final_Project
             this.Location = new Point(400, 150);
         }
 
+        //public RoomDAO RoomDAO{ get; set; }
+
         private void Room_Load(object sender, EventArgs e)
         {
-            this.Text = this.Text + " "+ room.Id;
+            this.Text = "Room "+ room.Id;
             labelPrice.Text = "Giá thuê: " + String.Format("{0:N}", room.Price) +" VNĐ";
             labelNumberOfPeople.Text = "Số người: " + room.NumberOfPeople.ToString();
             labelDescription.Text = "Mô tả : " + room.Description;
@@ -58,20 +60,39 @@ namespace Final_Project
                 customer.PhoneNumber = rows["DIENTHOAI"].ToString();
                 customer.RoomId = rows["MAPT"].ToString();
                 customers.Add(customer);
-
-                
             }
 
             seedListView();
+
+            // create query to get number of people in phong tro
+            query.Clear();
+            query.Append("SELECT COUNT(*) FROM KHACHHANG WHERE MAPT LIKE '");
+            query.Append(room.Id);
+            query.Append("'");
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = query.ToString();
+
+            //open connection
+            conn.Open();
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int max = Convert.ToInt32(room.NumberOfPeople);
+            conn.Close();
+
+            if (count >= max)
+            {
+                materialRaisedButtonAddCustomer.Enabled = false;
+            }
         }
 
+        // generate items for list view
         private void seedListView()
         {
             List<string[]> data = new List<string[]>();
             int i = 1;
             foreach (CustomerDAO customer in customers)
             {
-                data.Add(new string[] { i.ToString(),customer.Name, customer.CMND, customer.PhoneNumber });
+                data.Add(new string[] {i.ToString(), customer.Name, customer.CMND, customer.PhoneNumber });
                 i++;
             }
 
@@ -80,6 +101,19 @@ namespace Final_Project
                 ListViewItem item = new ListViewItem(row);
                 materialListViewCustomer.Items.Add(item);
             }
+        }
+
+        private void materialRaisedButtonAddCustomer_Click(object sender, EventArgs e)
+        {
+            AddKH kh = new AddKH(this);
+            kh.ShowDialog();
+        }
+
+        public void Reload(object sender, EventArgs e)
+        {
+            customers.Clear();
+            materialListViewCustomer.Items.Clear();
+            Room_Load(sender, e);
         }
     }
 }

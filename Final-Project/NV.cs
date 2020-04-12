@@ -18,6 +18,8 @@ namespace Final_Project
     {
         private static int numPerRow = 10;
 
+        private List<CustomerDAO> customers = new List<CustomerDAO>();
+
         // room data access object
         private static List<RoomDAO> rooms = new List<RoomDAO>();
 
@@ -40,9 +42,11 @@ namespace Final_Project
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(500, 250); 
         }
-
+        
         private void NV_Load(object sender, EventArgs e)
         {
+            // tabPage QLPT
+
             // get phong tro
             StringBuilder query = new StringBuilder();
             query.Append("SELECT * FROM PHONGTRO ");
@@ -53,7 +57,7 @@ namespace Final_Project
             DataSet ds = new DataSet();
             da.Fill(ds, "PHONGTRO");
             conn.Close();
-
+            
             int spaceCol = -50;
 
             foreach (DataRow row in ds.Tables["PHONGTRO"].Rows)
@@ -88,6 +92,52 @@ namespace Final_Project
 
                 buttons.Add(newButton);
                 this.tabPageQLPT.Controls.Add(newButton);
+            }
+
+            // tabPageLQKH
+
+            query.Clear();
+            query.Append("SELECT * FROM KHACHHANG");
+            query.Append(" ORDER BY MAPT ASC");
+
+            conn.Open();
+            SqlDataAdapter daCustomer = new SqlDataAdapter(query.ToString(), conn);
+            DataSet dsCustommer = new DataSet();
+            daCustomer.Fill(dsCustommer, "KHACHHANG");
+            conn.Close();
+
+
+            foreach (DataRow rows in dsCustommer.Tables["KHACHHANG"].Rows)
+            {
+                CustomerDAO customer = new CustomerDAO();
+                customer.CMND = rows["CMND"].ToString();
+                customer.Name = rows["HOTEN"].ToString();
+                customer.PhoneNumber = rows["DIENTHOAI"].ToString();
+                customer.RoomId = rows["MAPT"].ToString();
+                customers.Add(customer);
+            }
+
+            seedListView();
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void seedListView()
+        {
+            List<string[]> data = new List<string[]>();
+            int i = 1;
+            foreach (CustomerDAO customer in customers)
+            {
+                data.Add(new string[] { i.ToString(), customer.RoomId, customer.Name, customer.CMND, customer.PhoneNumber });
+                i++;
+            }
+
+            foreach (string[] row in data)
+            {
+                ListViewItem item = new ListViewItem(row);
+                materialListViewCustomer.Items.Add(item);
             }
         }
 
@@ -126,37 +176,12 @@ namespace Final_Project
             }
         }
 
-        private void qlptToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            QLPT qlpt = new QLPT();
-            qlpt.ShowDialog();
-        }
-
-        private void qlntToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            QLKH qlkh = new QLKH();
-            qlkh.ShowDialog();
-        }
-
         private void logout_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login f1 = new Login();
             f1.ShowDialog();
             this.Close();
-        }
-
-        private void tktcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangePassword changePassword = new ChangePassword();
-            changePassword.ShowDialog();
         }
     }
 }

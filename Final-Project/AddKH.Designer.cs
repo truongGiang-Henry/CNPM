@@ -28,131 +28,181 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.cmnd = new System.Windows.Forms.TextBox();
-            this.phone = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.roomId = new System.Windows.Forms.ComboBox();
-            this.clear = new System.Windows.Forms.Button();
+            this.cbRoomId = new System.Windows.Forms.ComboBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.clear = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.save = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.name = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cmnd = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.phone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
-            // button3
+            // cbRoomId
             // 
-            this.button3.Location = new System.Drawing.Point(355, 228);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 23);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "SAVE";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cbRoomId.AllowDrop = true;
+            this.cbRoomId.BackColor = System.Drawing.SystemColors.Control;
+            this.cbRoomId.FormattingEnabled = true;
+            this.cbRoomId.Location = new System.Drawing.Point(149, 218);
+            this.cbRoomId.Name = "cbRoomId";
+            this.cbRoomId.Size = new System.Drawing.Size(134, 21);
+            this.cbRoomId.TabIndex = 19;
             // 
-            // cmnd
+            // materialLabel1
             // 
-            this.cmnd.Location = new System.Drawing.Point(121, 92);
-            this.cmnd.Margin = new System.Windows.Forms.Padding(2);
-            this.cmnd.Name = "cmnd";
-            this.cmnd.Size = new System.Drawing.Size(134, 20);
-            this.cmnd.TabIndex = 17;
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(28, 77);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(77, 19);
+            this.materialLabel1.TabIndex = 21;
+            this.materialLabel1.Text = "Họ và Tên";
             // 
-            // phone
+            // materialLabel2
             // 
-            this.phone.Location = new System.Drawing.Point(121, 136);
-            this.phone.Margin = new System.Windows.Forms.Padding(2);
-            this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(134, 20);
-            this.phone.TabIndex = 16;
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(28, 126);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(53, 19);
+            this.materialLabel2.TabIndex = 22;
+            this.materialLabel2.Text = "CMND";
             // 
-            // name
+            // materialLabel3
             // 
-            this.name.Location = new System.Drawing.Point(121, 45);
-            this.name.Margin = new System.Windows.Forms.Padding(2);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(226, 20);
-            this.name.TabIndex = 14;
-            this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(28, 170);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(98, 19);
+            this.materialLabel3.TabIndex = 23;
+            this.materialLabel3.Text = "Số điện thoại";
             // 
-            // label4
+            // materialLabel4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 185);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Mã Phòng";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 140);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Số điện thoại ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 94);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "CMND";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 45);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Họ và tên";
-            // 
-            // roomId
-            // 
-            this.roomId.FormattingEnabled = true;
-            this.roomId.Location = new System.Drawing.Point(121, 185);
-            this.roomId.Name = "roomId";
-            this.roomId.Size = new System.Drawing.Size(134, 21);
-            this.roomId.TabIndex = 19;
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(28, 217);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(76, 19);
+            this.materialLabel4.TabIndex = 24;
+            this.materialLabel4.Text = "Mã Phòng";
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(255, 228);
-            this.clear.Margin = new System.Windows.Forms.Padding(2);
+            this.clear.AutoSize = true;
+            this.clear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.clear.Depth = 0;
+            this.clear.Icon = null;
+            this.clear.Location = new System.Drawing.Point(369, 253);
+            this.clear.MouseState = MaterialSkin.MouseState.HOVER;
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(92, 23);
-            this.clear.TabIndex = 20;
+            this.clear.Primary = true;
+            this.clear.Size = new System.Drawing.Size(63, 36);
+            this.clear.TabIndex = 25;
             this.clear.Text = "CLEAR";
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
+            // save
+            // 
+            this.save.AutoSize = true;
+            this.save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.save.Depth = 0;
+            this.save.Icon = null;
+            this.save.Location = new System.Drawing.Point(450, 253);
+            this.save.MouseState = MaterialSkin.MouseState.HOVER;
+            this.save.Name = "save";
+            this.save.Primary = true;
+            this.save.Size = new System.Drawing.Size(55, 36);
+            this.save.TabIndex = 26;
+            this.save.Text = "SAVE";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
+            // name
+            // 
+            this.name.Depth = 0;
+            this.name.Hint = "";
+            this.name.Location = new System.Drawing.Point(149, 77);
+            this.name.MaxLength = 32767;
+            this.name.MouseState = MaterialSkin.MouseState.HOVER;
+            this.name.Name = "name";
+            this.name.PasswordChar = '\0';
+            this.name.SelectedText = "";
+            this.name.SelectionLength = 0;
+            this.name.SelectionStart = 0;
+            this.name.Size = new System.Drawing.Size(197, 23);
+            this.name.TabIndex = 27;
+            this.name.TabStop = false;
+            this.name.UseSystemPasswordChar = false;
+            // 
+            // cmnd
+            // 
+            this.cmnd.Depth = 0;
+            this.cmnd.Hint = "";
+            this.cmnd.Location = new System.Drawing.Point(149, 122);
+            this.cmnd.MaxLength = 32767;
+            this.cmnd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cmnd.Name = "cmnd";
+            this.cmnd.PasswordChar = '\0';
+            this.cmnd.SelectedText = "";
+            this.cmnd.SelectionLength = 0;
+            this.cmnd.SelectionStart = 0;
+            this.cmnd.Size = new System.Drawing.Size(197, 23);
+            this.cmnd.TabIndex = 28;
+            this.cmnd.TabStop = false;
+            this.cmnd.UseSystemPasswordChar = false;
+            // 
+            // phone
+            // 
+            this.phone.Depth = 0;
+            this.phone.Hint = "";
+            this.phone.Location = new System.Drawing.Point(149, 170);
+            this.phone.MaxLength = 32767;
+            this.phone.MouseState = MaterialSkin.MouseState.HOVER;
+            this.phone.Name = "phone";
+            this.phone.PasswordChar = '\0';
+            this.phone.SelectedText = "";
+            this.phone.SelectionLength = 0;
+            this.phone.SelectionStart = 0;
+            this.phone.Size = new System.Drawing.Size(197, 23);
+            this.phone.TabIndex = 29;
+            this.phone.TabStop = false;
+            this.phone.UseSystemPasswordChar = false;
             // 
             // AddKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 262);
-            this.Controls.Add(this.clear);
-            this.Controls.Add(this.roomId);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.cmnd);
+            this.ClientSize = new System.Drawing.Size(517, 301);
             this.Controls.Add(this.phone);
+            this.Controls.Add(this.cmnd);
             this.Controls.Add(this.name);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.save);
+            this.Controls.Add(this.clear);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.cbRoomId);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddKH";
-            this.Text = "Thêm mới khách hàng";
+            this.Text = "Thêm mới khách trọ";
             this.Load += new System.EventHandler(this.AddKH_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,16 +210,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox cmnd;
-        private System.Windows.Forms.TextBox phone;
-        private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox roomId;
-        private System.Windows.Forms.Button clear;
+        private System.Windows.Forms.ComboBox cbRoomId;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialRaisedButton clear;
+        private MaterialSkin.Controls.MaterialRaisedButton save;
+        private MaterialSkin.Controls.MaterialSingleLineTextField name;
+        private MaterialSkin.Controls.MaterialSingleLineTextField cmnd;
+        private MaterialSkin.Controls.MaterialSingleLineTextField phone;
     }
 }

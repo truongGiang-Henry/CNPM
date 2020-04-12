@@ -31,12 +31,6 @@ namespace Final_Project
             f1.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddKH kh = new AddKH();
-            kh.Show();
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 

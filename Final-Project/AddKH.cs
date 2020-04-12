@@ -9,13 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Final_Project
 {
-    public partial class AddKH : Form
+    public partial class AddKH : MaterialForm
     {
-        public AddKH()
+        private Room room;
+
+        public AddKH(Room room)
         {
             InitializeComponent();
+
+            this.room = room;
+
+            // set the start position
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(700, 300);
         }
 
         private void AddKH_Load(object sender, EventArgs e)
@@ -36,14 +47,30 @@ namespace Final_Project
             conn.Close();
 
             // set value for combobox
-            roomId.ValueMember = "MAPT";
-            roomId.DataSource = ds.Tables["da"];
-            roomId.DropDownStyle = ComboBoxStyle.DropDownList;
-            roomId.Enabled = true;
-
+            cbRoomId.ValueMember = "MAPT";
+            cbRoomId.DataSource = ds.Tables["da"];
+            cbRoomId.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRoomId.Enabled = true;
+            cbRoomId.SelectedIndex = cbRoomId.FindString(room.room.Id);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void checkFocus(MaterialSingleLineTextField textBox)
+        {
+            if (textBox.Text.Equals(""))
+            {
+                textBox.Focus();
+            }
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            name.Text = "";
+            cmnd.Text = "";
+            phone.Text = "";
+            cbRoomId.Text = "";
+        }
+
+        private void save_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(Program.getConnectionString());
             // check valid data
@@ -64,7 +91,7 @@ namespace Final_Project
                     cmd.Parameters.Add("@CMND", SqlDbType.Char, 12).Value = cmnd.Text.ToString();
                     cmd.Parameters.Add("@HOTEN", SqlDbType.NVarChar, 50).Value = name.Text.ToString();
                     cmd.Parameters.Add("@DIENTHOAI", SqlDbType.VarChar).Value = phone.Text.ToString();
-                    cmd.Parameters.Add("@MAPT", SqlDbType.Char, 5).Value = roomId.Text.ToString();
+                    cmd.Parameters.Add("@MAPT", SqlDbType.Char, 5).Value = cbRoomId.Text.ToString();
 
                     conn.Open();
 
@@ -74,34 +101,16 @@ namespace Final_Project
                     // clear field
                     clear.PerformClick();
 
-                    MessageBox.Show("Thêm khách hàng thành công ♥♫");
+                    MaterialMessageBox.Show("Thêm khách hàng thành công ♥", "Thông báo");
                 }
-                catch(SqlException se)
+                catch (SqlException se)
                 {
                     MessageBox.Show(se.Message);
                 }
             }
-        }
 
-        private void checkFocus(TextBox textBox)
-        {
-            if (textBox.Text.Equals(""))
-            {
-                textBox.Focus();
-            }
-        }
-
-        private void name_TextChanged(object sender, EventArgs e)
-        {
-            name.CharacterCasing = CharacterCasing.Upper;
-        }
-
-        private void clear_Click(object sender, EventArgs e)
-        {
-            name.Text = "";
-            cmnd.Text = "";
-            phone.Text = "";
-            roomId.Text = "";
+            //refesh form room
+            room.Reload(sender, e);
         }
     }
 }

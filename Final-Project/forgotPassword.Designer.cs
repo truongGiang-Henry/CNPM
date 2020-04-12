@@ -112,7 +112,7 @@
             this.submit.UseVisualStyleBackColor = true;
             this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
-            // forgotPassword
+            // ForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,7 +122,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.email);
             this.Controls.Add(this.userName);
-            this.Name = "forgotPassword";
+            this.Name = "ForgotPassword";
             this.Text = "Recovery Password";
             this.ResumeLayout(false);
             this.PerformLayout();

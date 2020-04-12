@@ -30,11 +30,18 @@
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPageQLPT = new System.Windows.Forms.TabPage();
-            this.tabPageQLNV = new System.Windows.Forms.TabPage();
+            this.tabPageQLKH = new System.Windows.Forms.TabPage();
+            this.materialListViewCustomer = new MaterialSkin.Controls.MaterialListView();
+            this.STT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRoomId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCMND = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageTKTC = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1.SuspendLayout();
+            this.tabPageQLKH.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -42,7 +49,7 @@
             this.materialTabControl1.AllowDrop = true;
             this.materialTabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.materialTabControl1.Controls.Add(this.tabPageQLPT);
-            this.materialTabControl1.Controls.Add(this.tabPageQLNV);
+            this.materialTabControl1.Controls.Add(this.tabPageQLKH);
             this.materialTabControl1.Controls.Add(this.tabPageTKTC);
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Depth = 0;
@@ -65,24 +72,75 @@
             this.tabPageQLPT.Text = "Quản lý phòng trọ";
             this.tabPageQLPT.UseVisualStyleBackColor = true;
             // 
-            // tabPageQLNV
+            // tabPageQLKH
             // 
-            this.tabPageQLNV.Location = new System.Drawing.Point(4, 28);
-            this.tabPageQLNV.Name = "tabPageQLNV";
-            this.tabPageQLNV.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageQLNV.Size = new System.Drawing.Size(1035, 394);
-            this.tabPageQLNV.TabIndex = 1;
-            this.tabPageQLNV.Text = "Quản lý nhân viên";
-            this.tabPageQLNV.UseVisualStyleBackColor = true;
+            this.tabPageQLKH.Controls.Add(this.materialListViewCustomer);
+            this.tabPageQLKH.Location = new System.Drawing.Point(4, 28);
+            this.tabPageQLKH.Name = "tabPageQLKH";
+            this.tabPageQLKH.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageQLKH.Size = new System.Drawing.Size(1035, 425);
+            this.tabPageQLKH.TabIndex = 1;
+            this.tabPageQLKH.Text = "Quản lý khách hàng";
+            this.tabPageQLKH.UseVisualStyleBackColor = true;
+            // 
+            // materialListViewCustomer
+            // 
+            this.materialListViewCustomer.AutoArrange = false;
+            this.materialListViewCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListViewCustomer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.STT,
+            this.columnRoomId,
+            this.columnName,
+            this.columnCMND,
+            this.columnPhone});
+            this.materialListViewCustomer.Depth = 0;
+            this.materialListViewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListViewCustomer.FullRowSelect = true;
+            this.materialListViewCustomer.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListViewCustomer.HideSelection = false;
+            this.materialListViewCustomer.Location = new System.Drawing.Point(6, 6);
+            this.materialListViewCustomer.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListViewCustomer.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListViewCustomer.Name = "materialListViewCustomer";
+            this.materialListViewCustomer.OwnerDraw = true;
+            this.materialListViewCustomer.Size = new System.Drawing.Size(693, 423);
+            this.materialListViewCustomer.TabIndex = 0;
+            this.materialListViewCustomer.UseCompatibleStateImageBehavior = false;
+            this.materialListViewCustomer.View = System.Windows.Forms.View.Details;
+            // 
+            // STT
+            // 
+            this.STT.Text = "STT";
+            this.STT.Width = 84;
+            // 
+            // columnRoomId
+            // 
+            this.columnRoomId.Text = "Phòng";
+            this.columnRoomId.Width = 100;
+            // 
+            // columnName
+            // 
+            this.columnName.Text = "Họ Tên";
+            this.columnName.Width = 173;
+            // 
+            // columnCMND
+            // 
+            this.columnCMND.Text = "CMND";
+            this.columnCMND.Width = 167;
+            // 
+            // columnPhone
+            // 
+            this.columnPhone.Text = "Điện thoại";
+            this.columnPhone.Width = 175;
             // 
             // tabPageTKTC
             // 
             this.tabPageTKTC.Location = new System.Drawing.Point(4, 28);
             this.tabPageTKTC.Name = "tabPageTKTC";
             this.tabPageTKTC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTKTC.Size = new System.Drawing.Size(1035, 394);
+            this.tabPageTKTC.Size = new System.Drawing.Size(1035, 425);
             this.tabPageTKTC.TabIndex = 2;
-            this.tabPageTKTC.Text = "Thống kê thu chi";
+            this.tabPageTKTC.Text = "Thống kê ";
             this.tabPageTKTC.UseVisualStyleBackColor = true;
             // 
             // tabPage1
@@ -93,7 +151,7 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPage1.Size = new System.Drawing.Size(1035, 394);
+            this.tabPage1.Size = new System.Drawing.Size(1035, 425);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Đổi mật khẩu";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -123,6 +181,7 @@
             this.Text = "Quản lý";
             this.Load += new System.EventHandler(this.NV_Load);
             this.materialTabControl1.ResumeLayout(false);
+            this.tabPageQLKH.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -130,9 +189,15 @@
         #endregion
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPageQLPT;
-        private System.Windows.Forms.TabPage tabPageQLNV;
+        private System.Windows.Forms.TabPage tabPageQLKH;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.TabPage tabPageTKTC;
         private System.Windows.Forms.TabPage tabPage1;
+        private MaterialSkin.Controls.MaterialListView materialListViewCustomer;
+        private System.Windows.Forms.ColumnHeader columnRoomId;
+        private System.Windows.Forms.ColumnHeader columnName;
+        private System.Windows.Forms.ColumnHeader columnCMND;
+        private System.Windows.Forms.ColumnHeader columnPhone;
+        private System.Windows.Forms.ColumnHeader STT;
     }
 }
