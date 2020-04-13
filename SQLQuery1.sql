@@ -190,24 +190,3 @@ CREATE PROC SP_ADDHOADON
 	@CMND CHAR(12), @MAPT CHAR(5)
 AS
 	INSERT INTO HoaDon(CMND, MAPT, NGAYLAP) VALUES (@CMND, @MAPT, GETDATE())
-
-
-
-
-
-		select * from taikhoan
-		select * from phongtro
-		select * from khachhang where mapt like 'pt001'
-		ORDER BY MAPT ASC
-		select * from hoadon
-		delete hoadon
-
-
-create table HoaDon(
-	maHD char(5) DEFAULT DBO.AUTO_IDHD(),
-	CMND char (12),
-	maPT char (5),
-	ngaylap date,
-	constraint HoaDon_PhongTro_MaPT foreign key (maPT) references PhongTro(maPT),
-	constraint HoaDon_KhachHang_MaPT foreign key (CMND) references KhachHang(CMND),
-	primary key (maHD)
