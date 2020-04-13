@@ -28,86 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.oldPasssword = new System.Windows.Forms.TextBox();
-            this.newPassword = new System.Windows.Forms.TextBox();
-            this.newPasswordConfirm = new System.Windows.Forms.TextBox();
-            this.submit = new System.Windows.Forms.Button();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.oldPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.newPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.newPasswordConfirm = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.submit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
-            // label1
+            // materialLabel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mật khẩu cũ";
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(35, 93);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(91, 19);
+            this.materialLabel1.TabIndex = 7;
+            this.materialLabel1.Text = "Mật khẩu cũ";
             // 
-            // label2
+            // materialLabel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mật khẩu mới";
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(35, 132);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(101, 19);
+            this.materialLabel2.TabIndex = 8;
+            this.materialLabel2.Text = "Mật khẩu mới";
             // 
-            // label3
+            // materialLabel3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 118);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Xác nhận mật khẩu";
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(35, 169);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(136, 19);
+            this.materialLabel3.TabIndex = 9;
+            this.materialLabel3.Text = "Xác nhận mật khẩu";
             // 
-            // oldPasssword
+            // oldPassword
             // 
-            this.oldPasssword.Location = new System.Drawing.Point(138, 46);
-            this.oldPasssword.Name = "oldPasssword";
-            this.oldPasssword.Size = new System.Drawing.Size(157, 20);
-            this.oldPasssword.TabIndex = 3;
+            this.oldPassword.Depth = 0;
+            this.oldPassword.Hint = "";
+            this.oldPassword.Location = new System.Drawing.Point(213, 93);
+            this.oldPassword.MaxLength = 32767;
+            this.oldPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.oldPassword.Name = "oldPassword";
+            this.oldPassword.PasswordChar = '\0';
+            this.oldPassword.SelectedText = "";
+            this.oldPassword.SelectionLength = 0;
+            this.oldPassword.SelectionStart = 0;
+            this.oldPassword.Size = new System.Drawing.Size(209, 23);
+            this.oldPassword.TabIndex = 10;
+            this.oldPassword.TabStop = false;
+            this.oldPassword.UseSystemPasswordChar = false;
             // 
             // newPassword
             // 
-            this.newPassword.Location = new System.Drawing.Point(138, 83);
+            this.newPassword.Depth = 0;
+            this.newPassword.Hint = "";
+            this.newPassword.Location = new System.Drawing.Point(213, 128);
+            this.newPassword.MaxLength = 32767;
+            this.newPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.newPassword.Name = "newPassword";
-            this.newPassword.Size = new System.Drawing.Size(157, 20);
-            this.newPassword.TabIndex = 4;
+            this.newPassword.PasswordChar = '\0';
+            this.newPassword.SelectedText = "";
+            this.newPassword.SelectionLength = 0;
+            this.newPassword.SelectionStart = 0;
+            this.newPassword.Size = new System.Drawing.Size(209, 23);
+            this.newPassword.TabIndex = 11;
+            this.newPassword.TabStop = false;
+            this.newPassword.UseSystemPasswordChar = false;
             // 
             // newPasswordConfirm
             // 
-            this.newPasswordConfirm.Location = new System.Drawing.Point(138, 118);
+            this.newPasswordConfirm.Depth = 0;
+            this.newPasswordConfirm.Hint = "";
+            this.newPasswordConfirm.Location = new System.Drawing.Point(213, 165);
+            this.newPasswordConfirm.MaxLength = 32767;
+            this.newPasswordConfirm.MouseState = MaterialSkin.MouseState.HOVER;
             this.newPasswordConfirm.Name = "newPasswordConfirm";
-            this.newPasswordConfirm.Size = new System.Drawing.Size(157, 20);
-            this.newPasswordConfirm.TabIndex = 5;
+            this.newPasswordConfirm.PasswordChar = '\0';
+            this.newPasswordConfirm.SelectedText = "";
+            this.newPasswordConfirm.SelectionLength = 0;
+            this.newPasswordConfirm.SelectionStart = 0;
+            this.newPasswordConfirm.Size = new System.Drawing.Size(209, 23);
+            this.newPasswordConfirm.TabIndex = 12;
+            this.newPasswordConfirm.TabStop = false;
+            this.newPasswordConfirm.UseSystemPasswordChar = false;
             // 
             // submit
             // 
-            this.submit.Location = new System.Drawing.Point(138, 171);
+            this.submit.AutoSize = true;
+            this.submit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.submit.Depth = 0;
+            this.submit.Icon = null;
+            this.submit.Location = new System.Drawing.Point(280, 213);
+            this.submit.MouseState = MaterialSkin.MouseState.HOVER;
             this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(86, 31);
-            this.submit.TabIndex = 6;
-            this.submit.Text = "SUBMIT";
+            this.submit.Primary = true;
+            this.submit.Size = new System.Drawing.Size(71, 36);
+            this.submit.TabIndex = 13;
+            this.submit.Text = "Submit";
             this.submit.UseVisualStyleBackColor = true;
             this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
-            // changePassword
+            // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 208);
+            this.ClientSize = new System.Drawing.Size(457, 261);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.newPasswordConfirm);
             this.Controls.Add(this.newPassword);
-            this.Controls.Add(this.oldPasssword);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "changePassword";
+            this.Controls.Add(this.oldPassword);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
+            this.Name = "ChangePassword";
             this.Text = "changePassword";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,12 +164,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox oldPasssword;
-        private System.Windows.Forms.TextBox newPassword;
-        private System.Windows.Forms.TextBox newPasswordConfirm;
-        private System.Windows.Forms.Button submit;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialSingleLineTextField oldPassword;
+        private MaterialSkin.Controls.MaterialSingleLineTextField newPassword;
+        private MaterialSkin.Controls.MaterialSingleLineTextField newPasswordConfirm;
+        private MaterialSkin.Controls.MaterialRaisedButton submit;
     }
 }

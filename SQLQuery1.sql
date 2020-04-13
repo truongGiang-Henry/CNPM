@@ -63,16 +63,34 @@ create table KhachHang(
 go 
 create table TaiKhoan(
 	id char (10),
-	username char(100) unique,
+	username varchar(100) unique,
 	pwd varchar(100),
 	primary key (id)
 )
 
 go 
+CREATE FUNCTION DBO.AUTO_IDHD()
+RETURNS varchar(5)
+AS
+BEGIN
+	DECLARE @ID VARCHAR(5)
+	IF (SELECT COUNT(maHD) FROM HoaDon) = 0
+		SET @ID = '0'
+	ELSE
+		SELECT @ID = MAX(RIGHT(maHD, 3)) FROM HoaDon
+		SELECT @ID = CASE
+			WHEN @ID >= 0 and @ID < 9 THEN 'HD00' + CONVERT(CHAR, CONVERT(INT, @ID) + 1)
+			WHEN @ID >= 9 THEN 'HD0' + CONVERT(CHAR, CONVERT(INT, @ID) + 1)
+		END
+	RETURN @ID
+END
+
+go 
 create table HoaDon(
-	maHD char(12),
+	maHD char(5) DEFAULT DBO.AUTO_IDHD(),
 	CMND char (12),
 	maPT char (5),
+	ngaylap date,
 	constraint HoaDon_PhongTro_MaPT foreign key (maPT) references PhongTro(maPT),
 	constraint HoaDon_KhachHang_MaPT foreign key (CMND) references KhachHang(CMND),
 	primary key (maHD)
@@ -97,8 +115,12 @@ insert into KhachHang values
 (51703176, N'Minh Mẫn', 0234567451, 'PT003'),
 (51703138, N'Phan Thế An', 25689471235, 'PT007')
 
+go
+insert into HoaDon (cmnd, mapt, ngaylap) values ('51703038    ', 'PT007', GETDATE())
+go
+insert into HoaDon (cmnd, mapt, ngaylap) values ('51703010    ', 'PT001', GETDATE())
 
-
+delete HoaDon where mahd like 'hd003'
 --ADD KHACH HANG
 GO
 CREATE PROC SP_ADDKHACHHANG
@@ -108,19 +130,32 @@ AS
 		INSERT INTO KHACHHANG(CMND, HOTEN, DIENTHOAI, MAPT) VALUES (@CMND, @HOTEN, @DIENTHOAI, @MAPT)
 	ELSE
 		RAISERROR('DA TON TAI CMND VUI LONG THU LAI', 16, 0)
+---------------------------------------------------------------------------
 
 GO
 CREATE PROC SP_ADDPHONGTRO
 	@GIATHUE FLOAT, @SONGUOI INT, @MOTA NVARCHAR(100)
 AS
 	INSERT INTO PHONGTRO(GIATHUE, SONGUOI, MOTA) VALUES (@GIATHUE, @SONGUOI, @MOTA)
+-------------------------------------------------------------------------------------
+GO
+CREATE PROC SP_UPDATEPHONGTRO
+	@GIATHUE FLOAT, @SONGUOI INT, @MOTA NVARCHAR(100), @MAPT CHAR(5)
+AS
+	BEGIN
+		UPDATE PHONGTRO
+		SET GIATHUE = @GIATHUE,
+		SONGUOI = @SONGUOI,
+		MOTA = @MOTA
+		WHERE MAPT = @MAPT
+	END
 
+---------------------------------
 GO
 CREATE PROC SP_UPDATEKHACHHANG
 	@OLDCMND CHAR(12), @NEWCMND CHAR(12), @HOTEN NVARCHAR(50), @DIENTHOAI VARCHAR(15), @MAPT CHAR(5)
 AS
-
-	IF NOT EXISTS (SELECT CMND FROM KHACHHANG WHERE CMND = @OLDCMND)
+	IF EXISTS (SELECT CMND FROM KHACHHANG WHERE CMND = @OLDCMND)
 		BEGIN
 			UPDATE KHACHHANG 
 			SET HOTEN = @HOTEN,
@@ -130,7 +165,31 @@ AS
 			WHERE CMND = @OLDCMND
 		END
 	ELSE
-		RAISERROR('KHONG TON TAI CMND NAY CUA KHACH HANG', 16, 0)
+		RAISERROR('CMND NAY DA CO NGUOI DANG KI', 16, 0)
+--------------------------------------------------------------------------
+
+GO
+CREATE PROC SP_CHANGEPASSWORD
+	@OLDPASSWORD VARCHAR(100), @NEWPASSWORD VARCHAR(100), @USERNAME CHAR(100)
+AS
+	IF EXISTS (SELECT 1 FROM TAIKHOAN WHERE USERNAME = @USERNAME AND PWD = @OLDPASSWORD)
+		UPDATE TAIKHOAN
+		SET PWD = @NEWPASSWORD
+		WHERE USERNAME = @USERNAME 
+		AND PWD = @OLDPASSWORD
+-----------------------------------------------------------------------------------------------
+GO 
+CREATE PROC SP_DELETEKHACHHANG
+	@CMND CHAR(12)
+AS
+	DELETE KHACHHANG
+	WHERE CMND = @CMND
+
+GO
+CREATE PROC SP_ADDHOADON
+	@CMND CHAR(12), @MAPT CHAR(5)
+AS
+	INSERT INTO HoaDon(CMND, MAPT, NGAYLAP) VALUES (@CMND, @MAPT, GETDATE())
 
 
 
@@ -138,4 +197,17 @@ AS
 
 		select * from taikhoan
 		select * from phongtro
-		select * from khachhang
+		select * from khachhang where mapt like 'pt001'
+		ORDER BY MAPT ASC
+		select * from hoadon
+		delete hoadon
+
+
+create table HoaDon(
+	maHD char(5) DEFAULT DBO.AUTO_IDHD(),
+	CMND char (12),
+	maPT char (5),
+	ngaylap date,
+	constraint HoaDon_PhongTro_MaPT foreign key (maPT) references PhongTro(maPT),
+	constraint HoaDon_KhachHang_MaPT foreign key (CMND) references KhachHang(CMND),
+	primary key (maHD)

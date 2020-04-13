@@ -41,7 +41,7 @@
             this.columnPhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialRaisedButtonAddCustomer = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButtonBill = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -176,27 +176,28 @@
             this.materialDivider1.TabIndex = 7;
             this.materialDivider1.Text = "materialDivider1";
             // 
-            // materialRaisedButton1
+            // materialRaisedButtonBill
             // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(265, 362);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(81, 36);
-            this.materialRaisedButton1.TabIndex = 8;
-            this.materialRaisedButton1.Text = "Hóa Đơn";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButtonBill.AutoSize = true;
+            this.materialRaisedButtonBill.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButtonBill.Depth = 0;
+            this.materialRaisedButtonBill.Icon = null;
+            this.materialRaisedButtonBill.Location = new System.Drawing.Point(265, 362);
+            this.materialRaisedButtonBill.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButtonBill.Name = "materialRaisedButtonBill";
+            this.materialRaisedButtonBill.Primary = true;
+            this.materialRaisedButtonBill.Size = new System.Drawing.Size(81, 36);
+            this.materialRaisedButtonBill.TabIndex = 8;
+            this.materialRaisedButtonBill.Text = "Hóa Đơn";
+            this.materialRaisedButtonBill.UseVisualStyleBackColor = true;
+            this.materialRaisedButtonBill.Click += new System.EventHandler(this.materialRaisedButtonBill_Click);
             // 
             // Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 530);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.materialRaisedButtonBill);
             this.Controls.Add(this.materialRaisedButtonAddCustomer);
             this.Controls.Add(this.materialListViewCustomer);
             this.Controls.Add(this.pictureBox2);
@@ -229,6 +230,6 @@
         private System.Windows.Forms.ColumnHeader columnSTT;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButtonAddCustomer;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButtonBill;
     }
 }

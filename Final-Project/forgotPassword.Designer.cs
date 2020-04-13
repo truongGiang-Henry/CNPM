@@ -124,6 +124,7 @@
             this.Controls.Add(this.userName);
             this.Name = "ForgotPassword";
             this.Text = "Recovery Password";
+            this.Load += new System.EventHandler(this.ForgotPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

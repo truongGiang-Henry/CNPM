@@ -142,5 +142,34 @@ namespace Final_Project
                 textBox.Focus();
             }
         }
+
+        private void ForgotPassword_Load(object sender, EventArgs e)
+        {
+
+        }
+        public Boolean checkUsername(String txt)
+        {
+            Boolean result = true; 
+            if (txt == null)
+            {
+                throw new NullReferenceException();
+            }
+            if (txt.Length < 3)
+            {
+                result = false;
+            }
+            return result;
+        }
+        public Boolean checkEmail(String txt)
+        {
+            Boolean result = true;
+            if (!txt.Contains("@"))
+            {
+                result = false;
+            }
+            return result;
+             
+        }
     }
+
 }

@@ -72,7 +72,7 @@ namespace Final_Project
 
         private void save_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(Program.getConnectionString());
+            
             // check valid data
             if (name.Text.Equals("") || phone.Text.Equals("") || cmnd.Text.Equals(""))
             {
@@ -85,6 +85,7 @@ namespace Final_Project
             {
                 try
                 {
+                    SqlConnection conn = new SqlConnection(Program.getConnectionString());
                     // exec stored proc
                     SqlCommand cmd = conn.CreateCommand();
                     cmd.CommandText = "EXEC SP_ADDKHACHHANG @CMND, @HOTEN, @DIENTHOAI, @MAPT";
@@ -98,14 +99,13 @@ namespace Final_Project
                     cmd.ExecuteNonQuery();
 
                     conn.Close();
-                    // clear field
-                    clear.PerformClick();
 
                     MaterialMessageBox.Show("Thêm khách hàng thành công ♥", "Thông báo");
+                    this.Close();
                 }
                 catch (SqlException se)
                 {
-                    MessageBox.Show(se.Message);
+                    MaterialMessageBox.Show(se.Message, "Database");
                 }
             }
 

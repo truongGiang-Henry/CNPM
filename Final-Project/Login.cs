@@ -29,7 +29,7 @@ namespace Final_Project
 
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.BlueGrey300, Primary.BlueGrey500, 
+                Primary.BlueGrey300, Primary.BlueGrey500,
                 Primary.BlueGrey500, Accent.LightBlue400,
                 TextShade.WHITE
             );
@@ -39,6 +39,7 @@ namespace Final_Project
             this.Location = new Point(500, 250);
 
         }
+
        private void Form1_Load(object sender, EventArgs e)
         {
             materialSingleLineTextFieldUserName.Focus();
@@ -57,6 +58,33 @@ namespace Final_Project
             }
         }
 
+        public Boolean checkUsername(String txt)
+        {
+            Boolean result = true;
+            if (txt == null)
+            {
+                throw new NullReferenceException();
+            }
+            if (txt.Length < 3)
+            {
+                result = false;
+            }
+            return result;
+        }
+        public Boolean checkPassword(String txt)
+        {
+            Boolean result = true;
+            if (txt == null)
+            {
+                throw new NullReferenceException();
+            }
+            if (txt.Length < 3)
+            {
+                result = false;
+            }
+            return result;
+        }
+
         public static String getUserName()
         {
             return userName;
@@ -70,45 +98,53 @@ namespace Final_Project
 
         private void materialRaisedButtonLogin_Click(object sender, EventArgs e)
         {
-            try
+            if (checkUsername(materialSingleLineTextFieldUserName.Text) == false || checkPassword(materialSingleLineTextFieldPassword.Text) == false )
             {
-                SqlConnection conn = new SqlConnection(Program.getConnectionString());
-                conn.Open();
-
-                StringBuilder query = new StringBuilder();
-                query.Append("SELECT ID FROM TAIKHOAN WHERE USERNAME = '");
-                query.Append(materialSingleLineTextFieldUserName.Text.Trim());
-                query.Append("' AND PWD = '");
-                query.Append(materialSingleLineTextFieldPassword.Text.Trim());
-                query.Append("'");
-
-                SqlDataAdapter sda = new SqlDataAdapter(query.ToString(), conn);
-                DataTable tbl = new DataTable();
-                sda.Fill(tbl);
-
-                conn.Close();
-
-                if (tbl.Rows.Count == 1)
+                MaterialMessageBox.Show("Wrong Structure", "Error");
+            }
+            else
+            {
+                try
                 {
-                    // get username for change password form
-                    userName = materialSingleLineTextFieldUserName.Text;
+                    SqlConnection conn = new SqlConnection(Program.getConnectionString());
+                    conn.Open();
 
-                    NV nv = new NV();
-                    this.Hide();
-                    nv.ShowDialog();
-                    this.Close();
+                    StringBuilder query = new StringBuilder();
+                    query.Append("SELECT ID FROM TAIKHOAN WHERE USERNAME = '");
+                    query.Append(materialSingleLineTextFieldUserName.Text.Trim());
+                    query.Append("' AND PWD = '");
+                    query.Append(materialSingleLineTextFieldPassword.Text.Trim());
+                    query.Append("'");
+
+                    SqlDataAdapter sda = new SqlDataAdapter(query.ToString(), conn);
+                    DataTable tbl = new DataTable();
+                    sda.Fill(tbl);
+
+                    conn.Close();
+
+                    if (tbl.Rows.Count == 1)
+                    {
+                        // get username for change password form
+                        userName = materialSingleLineTextFieldUserName.Text;
+
+                        NV nv = new NV();
+                        this.Hide();
+                        nv.ShowDialog();
+                        this.Close();
 
 
+                    }
+                    else
+                    {
+                        MaterialMessageBox.Show("Check your Username and Password", "ERROR");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MaterialMessageBox.Show("Check your Username and Password", "ERROR");
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
     }
 }

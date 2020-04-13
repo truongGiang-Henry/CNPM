@@ -16,6 +16,10 @@ namespace Final_Project
 {
     public partial class Room : MaterialForm
     {
+        int count;
+
+        int max;
+
         public RoomDAO room;
 
         private List<CustomerDAO> customers = new List<CustomerDAO>();
@@ -28,7 +32,7 @@ namespace Final_Project
 
             // set the start position
             this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(400, 150);
+            this.Location = new Point(400, 100);
         }
 
         //public RoomDAO RoomDAO{ get; set; }
@@ -75,13 +79,17 @@ namespace Final_Project
 
             //open connection
             conn.Open();
-            int count = Convert.ToInt32(cmd.ExecuteScalar());
-            int max = Convert.ToInt32(room.NumberOfPeople);
+            count = Convert.ToInt32(cmd.ExecuteScalar());
+            max = Convert.ToInt32(room.NumberOfPeople);
             conn.Close();
 
-            if (count >= max)
+            if (count == 0)
             {
-                materialRaisedButtonAddCustomer.Enabled = false;
+                materialRaisedButtonBill.Enabled = false;
+            }
+            else
+            {
+                materialRaisedButtonBill.Enabled = true;
             }
         }
 
@@ -105,8 +113,17 @@ namespace Final_Project
 
         private void materialRaisedButtonAddCustomer_Click(object sender, EventArgs e)
         {
-            AddKH kh = new AddKH(this);
-            kh.ShowDialog();
+
+            if (count >= max)
+            {
+                MaterialMessageBox.Show("Số người trong phòng đã đủ ", "Thông báo");
+            }
+            else
+            {
+                AddKH kh = new AddKH(this);
+                kh.ShowDialog();
+            }
+            
         }
 
         public void Reload(object sender, EventArgs e)
@@ -114,6 +131,18 @@ namespace Final_Project
             customers.Clear();
             materialListViewCustomer.Items.Clear();
             Room_Load(sender, e);
+        }
+
+        private void materialRaisedButtonBill_Click(object sender, EventArgs e)
+        {
+            HoaDon hd = new HoaDon(room.Id);
+            hd.ShowDialog();
+        }
+
+        private void materialRaisedButtonUpdateRoom_Click(object sender, EventArgs e)
+        {
+            AddRoom addRoom = new AddRoom(room);
+            addRoom.ShowDialog();
         }
     }
 }

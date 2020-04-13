@@ -16,29 +16,35 @@ namespace Final_Project
 {
     public partial class ChangePassword : MaterialForm
     {
+        private String userName = Login.getUserName();
+
         public ChangePassword()
         {
             InitializeComponent();
+
+            // set the start position
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(700, 350);
         }
 
         private void submit_Click(object sender, EventArgs e)
         {
-            if (oldPasssword.Text.Equals("") || newPassword.Text.Equals("") || newPasswordConfirm.Text.Equals(""))
+            if (oldPassword.Text.Equals("") || newPassword.Text.Equals("") || newPasswordConfirm.Text.Equals(""))
             {
                 MessageBox.Show("Bạn chưa điền đủ thông tin vui lòng kiểm tra!");
-                checkFocus(oldPasssword);
+                checkFocus(oldPassword);
                 checkFocus(newPassword);
                 checkFocus(newPasswordConfirm);
             }
             else
             {
-                String userName = Login.getUserName();
+                
                 StringBuilder query = new StringBuilder();
                 query.Append("SELECT COUNT(*) FROM TAIKHOAN WHERE USERNAME LIKE '");
                 query.Append(userName);
                 query.Append("'");
                 query.Append("AND PWD LIKE '");
-                query.Append(oldPasssword.Text);
+                query.Append(oldPassword.Text);
                 query.Append("'");
 
                 SqlConnection conn = new SqlConnection(Program.getConnectionString());
@@ -55,12 +61,37 @@ namespace Final_Project
                 }
                 else
                 {
-                    
+                    if(oldPassword.Text.Equals(newPassword.Text))
+                    {
+                        MaterialMessageBox.Show("Bạn nhập 2 mật khẩu trùng nhau", "Thông báo");
+                    }
+                    else
+                    {
+                        if (newPassword.Text.Equals(newPasswordConfirm.Text))
+                        {
+                            cmd.CommandText = "EXEC SP_CHANGEPASSWORD @OLDPASSWORD , @NEWPASSWORD , @USERNAME ";
+                            cmd.Parameters.Add("@OLDPASSWORD", SqlDbType.VarChar, 100).Value = oldPassword.Text.ToString();
+                            cmd.Parameters.Add("@NEWPASSWORD", SqlDbType.VarChar, 100).Value = newPassword.Text.ToString();
+                            cmd.Parameters.Add("@USERNAME", SqlDbType.VarChar, 100).Value = userName;
+
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+
+                            // clear field
+                            oldPassword.Text = "";
+                            newPassword.Text = "";
+                            newPasswordConfirm.Text = "";
+                            this.Close();
+
+                            MaterialMessageBox.Show("Mật khẩu đã được đổi", "Thông báo");
+                        }
+                    }
                 }
             }
         }
 
-        private void checkFocus(TextBox textBox)
+        private void checkFocus(MaterialSingleLineTextField textBox)
         {
             if (textBox.Text.Equals(""))
             {
